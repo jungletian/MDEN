@@ -1,7 +1,6 @@
 package android.jungletian.github.io.mden.ui;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.jungletian.github.io.mden.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,10 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HomeActivity extends AppCompatActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class HomeActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
+     *
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
@@ -38,9 +37,7 @@ public class HomeActivity extends AppCompatActivity
         mTitle = getTitle();
 
         // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
     @Override
@@ -50,23 +47,6 @@ public class HomeActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
-
-        switch (position) {
-            case 0:
-                Intent intent = new Intent(this,FullscreenActivity.class);
-                startActivity(intent);
-                break;
-            case 1:
-                Intent intent1 = new Intent(this,FullscreenActivity.class);
-                startActivity(intent1);
-                break;
-            case 2:
-
-                break;
-            default:
-
-                break;
-        }
     }
 
     public void onSectionAttached(int number) {
